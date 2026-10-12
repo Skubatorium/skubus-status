@@ -1,7 +1,7 @@
 {
   "schema": 1,
-  "generated_at": "2026-10-12T10:41:57Z",
-  "inventory_commit": "d976145",
+  "generated_at": "2026-10-12T20:11:05Z",
+  "inventory_commit": "e114a75",
   "targets": [
     {
       "kind": "platform",
@@ -47,6 +47,23 @@
       "auth_required": false,
       "id": "lab-skubus-de",
       "hostname": "lab.skubus.de"
+    },
+    {
+      "kind": "project",
+      "name": "maschinenverleih-skubatz",
+      "checks": [
+        "dns",
+        "http",
+        "tls",
+        "origin_tls",
+        "uptimerobot"
+      ],
+      "auth_required": false,
+      "expect_codes": [
+        503
+      ],
+      "id": "maschinenverleih-skubatz-de",
+      "hostname": "maschinenverleih-skubatz.de"
     },
     {
       "kind": "project",
@@ -114,9 +131,26 @@
         "origin_tls",
         "uptimerobot"
       ],
-      "auth_required": false,
+      "auth_required": true,
       "id": "weg-skubus-de",
       "hostname": "weg.skubus.de"
+    },
+    {
+      "kind": "project",
+      "name": "maschinenverleih-skubatz",
+      "checks": [
+        "dns",
+        "http",
+        "tls",
+        "origin_tls",
+        "uptimerobot"
+      ],
+      "auth_required": false,
+      "expect_codes": [
+        503
+      ],
+      "id": "www-maschinenverleih-skubatz-de",
+      "hostname": "www.maschinenverleih-skubatz.de"
     },
     {
       "kind": "project",
@@ -131,6 +165,16 @@
       "auth_required": false,
       "id": "www-skubus-de",
       "hostname": "www.skubus.de"
+    },
+    {
+      "kind": "mail",
+      "name": "E-Mail Maschinenverleih (Resend)",
+      "checks": [
+        "mail_dns"
+      ],
+      "auth_required": false,
+      "id": "send-maschinenverleih-skubatz-de",
+      "hostname": "send.maschinenverleih-skubatz.de"
     },
     {
       "kind": "mail",
