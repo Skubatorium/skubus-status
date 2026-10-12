@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Skubus Health Check</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <h1>Skubus Health Check</h1>
+    <p class="sub" id="meta">Lade Daten …</p>
+  </div>
+</header>
+<main class="wrap">
+  <section class="summary" aria-live="polite">
+    <svg id="donut" viewBox="0 0 120 120" role="img" aria-label="Verteilung der Kachelstatus"></svg>
+    <div>
+      <p id="overall" class="overall">–</p>
+      <ul id="legend" class="legend"></ul>
+    </div>
+  </section>
+  <div id="stale" class="banner" hidden></div>
+  <section id="tiles" class="tiles"></section>
+  <p class="foot">Die Seite läuft auf derselben VPS wie die geprüften Dienste. Fällt die VPS aus, ist auch diese Seite nicht erreichbar — die unabhängige Alarmierung übernimmt UptimeRobot.</p>
+</main>
+<script src="app.js"></script>
+</body>
+</html>

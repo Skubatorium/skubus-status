@@ -1,0 +1,8 @@
+# Nur für lokale Tests: docker compose -f docker-compose.yml -f docker-compose.local.yml up --build
+services:
+  checker:
+    environment:
+      - CHECK_INTERVAL=60
+  web:
+    ports:
+      - "127.0.0.1:8080:80"

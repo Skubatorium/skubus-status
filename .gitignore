@@ -1,0 +1,7 @@
+# lokale Testausgaben des Checkers
+/out/
+.env
+*.env
+__pycache__/
+*.pyc
+.DS_Store

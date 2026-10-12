@@ -1,0 +1,40 @@
+# Skubus Status — zwei Container: checker schreibt JSON, web liefert Seite + JSON.
+# Coolify: Build Pack "Docker Compose", Domain status.skubus.de dem Service "web" (Port 80) zuweisen.
+services:
+  checker:
+    build:
+      context: .
+      dockerfile: checker/Dockerfile
+    restart: unless-stopped
+    environment:
+      # Read-only-Key, nur hier im Container; in Coolify als Env-Var setzen. Leer = Check "nicht konfiguriert".
+      - UPTIMEROBOT_API_KEY=${UPTIMEROBOT_API_KEY:-}
+      - CHECK_INTERVAL=300
+    volumes:
+      - status-data:/data
+    healthcheck:
+      # status.json muss jünger als 15 Minuten sein
+      test: ["CMD-SHELL", "find /data/status.json -mmin -15 2>/dev/null | grep -q ."]
+      interval: 60s
+      timeout: 5s
+      retries: 3
+      start_period: 120s
+
+  web:
+    build:
+      context: web
+    restart: unless-stopped
+    volumes:
+      - status-data:/data:ro
+    expose:
+      - "80"
+    depends_on:
+      - checker
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://127.0.0.1/healthz >/dev/null"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+
+volumes:
+  status-data:

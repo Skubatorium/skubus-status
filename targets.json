@@ -1,0 +1,156 @@
+{
+  "schema": 1,
+  "generated_at": "2026-10-12T10:36:37Z",
+  "inventory_commit": "1672302",
+  "targets": [
+    {
+      "kind": "platform",
+      "name": "Coolify",
+      "checks": [
+        "dns",
+        "http",
+        "tls",
+        "origin_tls",
+        "uptimerobot"
+      ],
+      "auth_required": false,
+      "id": "app-skubus-de",
+      "hostname": "app.skubus.de"
+    },
+    {
+      "kind": "project",
+      "name": "drachenspur-supabase",
+      "checks": [
+        "dns",
+        "http",
+        "tls",
+        "origin_tls",
+        "uptimerobot"
+      ],
+      "auth_required": false,
+      "expect_codes": [
+        401
+      ],
+      "id": "drachenspur-supabase-skubus-de",
+      "hostname": "drachenspur-supabase.skubus.de"
+    },
+    {
+      "kind": "project",
+      "name": "digital-lab",
+      "checks": [
+        "dns",
+        "http",
+        "tls",
+        "origin_tls",
+        "uptimerobot"
+      ],
+      "auth_required": false,
+      "id": "lab-skubus-de",
+      "hostname": "lab.skubus.de"
+    },
+    {
+      "kind": "project",
+      "name": "jga-2026",
+      "checks": [
+        "dns",
+        "http",
+        "tls",
+        "origin_tls",
+        "uptimerobot"
+      ],
+      "auth_required": true,
+      "id": "micha-jga-skubus-de",
+      "hostname": "micha-jga.skubus.de"
+    },
+    {
+      "kind": "project",
+      "name": "mind-loop",
+      "checks": [
+        "dns",
+        "http",
+        "tls",
+        "origin_tls",
+        "uptimerobot"
+      ],
+      "auth_required": false,
+      "id": "mindloop-skubus-de",
+      "hostname": "mindloop.skubus.de"
+    },
+    {
+      "kind": "project",
+      "name": "Norwegen",
+      "checks": [
+        "dns",
+        "http",
+        "tls",
+        "origin_tls",
+        "uptimerobot"
+      ],
+      "auth_required": true,
+      "id": "norwegen-skubus-de",
+      "hostname": "norwegen.skubus.de"
+    },
+    {
+      "kind": "project",
+      "name": "skubus",
+      "checks": [
+        "dns",
+        "http",
+        "tls",
+        "origin_tls",
+        "uptimerobot"
+      ],
+      "auth_required": false,
+      "id": "skubus-de",
+      "hostname": "skubus.de"
+    },
+    {
+      "kind": "project",
+      "name": "weg",
+      "checks": [
+        "dns",
+        "http",
+        "tls",
+        "origin_tls",
+        "uptimerobot"
+      ],
+      "auth_required": false,
+      "id": "weg-skubus-de",
+      "hostname": "weg.skubus.de"
+    },
+    {
+      "kind": "project",
+      "name": "skubus",
+      "checks": [
+        "dns",
+        "http",
+        "tls",
+        "origin_tls",
+        "uptimerobot"
+      ],
+      "auth_required": false,
+      "id": "www-skubus-de",
+      "hostname": "www.skubus.de"
+    },
+    {
+      "kind": "mail",
+      "name": "Transaktions-E-Mail (Resend)",
+      "checks": [
+        "mail_dns"
+      ],
+      "auth_required": false,
+      "id": "send-skubus-de",
+      "hostname": "send.skubus.de"
+    },
+    {
+      "kind": "unassigned",
+      "name": "drachenspur.skubus.de",
+      "checks": [
+        "dns"
+      ],
+      "auth_required": false,
+      "id": "drachenspur-skubus-de",
+      "hostname": "drachenspur.skubus.de"
+    }
+  ]
+}
