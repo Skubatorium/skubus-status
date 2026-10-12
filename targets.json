@@ -1,7 +1,7 @@
 {
   "schema": 1,
-  "generated_at": "2026-10-12T20:11:05Z",
-  "inventory_commit": "e114a75",
+  "generated_at": "2026-10-12T20:14:57Z",
+  "inventory_commit": "fed95e3",
   "targets": [
     {
       "kind": "platform",
@@ -120,6 +120,20 @@
       "auth_required": false,
       "id": "skubus-de",
       "hostname": "skubus.de"
+    },
+    {
+      "kind": "project",
+      "name": "skubus-status",
+      "checks": [
+        "dns",
+        "http",
+        "tls",
+        "origin_tls",
+        "uptimerobot"
+      ],
+      "auth_required": false,
+      "id": "status-skubus-de",
+      "hostname": "status.skubus.de"
     },
     {
       "kind": "project",
