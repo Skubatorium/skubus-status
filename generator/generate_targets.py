@@ -20,7 +20,12 @@ import sys
 # Hostnamen mit Sonderrolle. Alles andere in ACTIVE ist ein Projekt (Anwendung
 # laut applications.md) oder "unassigned" (DNS vorhanden, keine Anwendung).
 PLATFORM_HOSTS = {"app.skubus.de": "Coolify"}
-MAIL_HOSTS = {"send.skubus.de": "Transaktions-E-Mail (Resend)"}
+MAIL_HOSTS = {
+    "send.skubus.de": "Transaktions-E-Mail (Resend)",
+    "send.maschinenverleih-skubatz.de": "E-Mail Maschinenverleih (Resend)",
+}
+# Pflicht-Sonderhosts: fehlen sie in ACTIVE, ist das Inventar nicht wie erwartet.
+REQUIRED_SPECIAL = {"app.skubus.de", "send.skubus.de"}
 
 HOST_RE = re.compile(r"^[a-z0-9]([a-z0-9-]*[a-z0-9])?(\.[a-z0-9]([a-z0-9-]*[a-z0-9])?)+$")
 URL_HOST_RE = re.compile(r"https://([a-z0-9][a-z0-9.-]*\.[a-z]{2,})")
@@ -150,7 +155,7 @@ def build_targets(domains, apps):
     for h, app in by_host.items():
         if h not in active:
             raise ParseError("applications.md nennt %s (%s), steht aber nicht in domains.md ACTIVE" % (h, app["name"]))
-    for h in list(PLATFORM_HOSTS) + list(MAIL_HOSTS):
+    for h in REQUIRED_SPECIAL:
         if h not in active:
             raise ParseError("Erwarteter Sonder-Hostname %s fehlt in domains.md ACTIVE" % h)
 
